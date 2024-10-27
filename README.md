@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -71,3 +72,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 npm start
 cd my-app
+=======
+# Yuto299.github.io
+>>>>>>> 80ffbfe71413cbd568b27ecf3621f87e47d3d764
