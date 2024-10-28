@@ -28,3 +28,7 @@ const App: React.FC = () => {
 };
 
 export default App;
+
+// reactではなかったらindex.jsでいい
+// station5で詰まったらcssをクリアにしよう
+// cssは後書きが優先される
