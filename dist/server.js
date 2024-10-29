@@ -15,7 +15,7 @@
   \**************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const express = __webpack_require__(/*! express */ \"express\");\nconst path = __webpack_require__(/*! path */ \"path\");\nconst React = __webpack_require__(/*! react */ \"react\");\nconst {\n  renderToString\n} = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\nconst App = (__webpack_require__(/*! ../src/App */ \"./src/App.tsx\")[\"default\"]);\nconst app = express();\nconst PORT = 3000;\napp.use('/client', express.static(path.resolve(__dirname, '../dist/client')));\napp.get('*', (req, res) => {\n  const appHtml = renderToString(React.createElement(App));\n  const html = `\n    <!DOCTYPE html>\n    <html lang=\"en\">\n      <head>\n        <meta charset=\"UTF-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n        <title>Self Introduction App</title>\n      </head>\n      <body>\n        <div id=\"root\">${appHtml}</div>\n        <script src=\"/client/client.bundle.js\"></script>\n      </body>\n    </html>\n  `;\n  res.send(html);\n});\napp.use((err, req, res, next) => {\n  console.error(err.stack);\n  res.status(500).send('Something went wrong!');\n});\napp.listen(PORT, () => {\n  console.log(`Server is running on http://localhost:${PORT}`);\n});\n\n// const express = require('express')\n// const app = express()\n// app.get('/', function(req, res){\n//   res.send('Hello World')\n// })\n// app.listen(9000, function(){\n//   console.log(Server is running on http://localhost:9000)\n// })\n\n// node server/index.js\n\n//# sourceURL=webpack://my-app/./server/server.js?");
+eval("const express = __webpack_require__(/*! express */ \"express\");\nconst path = __webpack_require__(/*! path */ \"path\");\nconst React = __webpack_require__(/*! react */ \"react\");\nconst {\n  renderToString\n} = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\nconst App = (__webpack_require__(/*! ../src/App */ \"./src/App.tsx\")[\"default\"]);\nconst app = express();\nconst PORT = 9000;\napp.use('/static', express.static(path.resolve(__dirname, '../dist/client')));\napp.get('/', (req, res) => {\n  const appHtml = renderToString(React.createElement(App));\n  const html = `\n    <!DOCTYPE html>\n    <html lang=\"en\">\n      <head>\n        <meta charset=\"UTF-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n        <title>React SSR App</title>\n        <link rel=\"stylesheet\" href=\"/static/app.css\">\n      </head>\n      <body>\n        <div id=\"root\">${appHtml}</div>\n        <script src=\"/static/bundle.js\"></script>\n      </body>\n    </html>\n  `;\n  res.send(html);\n});\napp.listen(PORT, () => {\n  console.log(`Server is running on http://localhost:${PORT}`);\n});\n\n//# sourceURL=webpack://my-app/./server/server.js?");
 
 /***/ }),
 
@@ -262,7 +262,6 @@ module.exports = require("path");
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = __webpack_require__("./server/server.js");
-/******/ 	module.exports = __webpack_exports__;
 /******/ 	
 /******/ })()
 ;
