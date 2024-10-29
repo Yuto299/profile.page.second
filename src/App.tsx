@@ -1,14 +1,7 @@
 import React from 'react';
 import './App.css';
-import { useNavigate } from 'react-router-dom';
 
 const App: React.FC = () => {
-  const navigate = useNavigate();
-
-  const handleClick = (): void => {
-    navigate('/thanks');
-  };
-
   return (
     <div>
       <h1>Self Introduction</h1>
@@ -22,7 +15,7 @@ const App: React.FC = () => {
         </a>
       </h3>
       <h4>Nice to meet you!</h4>
-      <button onClick={handleClick}>いいね！</button>
+      <button>いいね！</button>
     </div>
   );
 };
