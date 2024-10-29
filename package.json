@@ -1,5 +1,5 @@
 {
-  "homepage": "https://Yuto299.github.io/profile.page/",
+  "homepage": "https://Yuto299.github.io/profile.page.second/",
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "webpack --config webpack.config.js",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
